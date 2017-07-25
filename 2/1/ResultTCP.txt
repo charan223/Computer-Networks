@@ -1,0 +1,2 @@
+Number  packets_sent   packets_received    bytes_sent   bytes_received    TCPgoodput        Packet_loss
+0       419            333                 1039688      797872            0.767414839837    86

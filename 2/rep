@@ -1,0 +1,39 @@
+
+ASSIGNMENT2::REPORT (ANALYZE PACKET TRACES AT VARIOUS HOSTS/SWITCHES USING WIRESHARK)
+                               ------- G.Sai Bharath Chandra (14CS10020)
+                               ------- R.Sri Charan Reddy    (14CS10037)
+
+PART1:
+     
+      To Capture Packets and extract data we have used a script and plotted the required graphs from the data obtained so
+      All instructions to follow to get the data are shown in the script itself in the zip file with filename "script1.py" 
+ 
+      
+      In TCP only the data packets have to be counted excluding the acknowledgement packets from server to client ,
+      in this case from h2 to h1.
+
+     1. TCP and ARP packet traces were found captured at h1 and h2 for TCP transmission for the given topology
+ 
+	Number  packets_sent   packets_received    bytes_sent   bytes_received    TCPgoodput        Packet_loss
+	0       419            333                 1039688      797872            0.767414839837    86
+ 
+     2. The data report and plots for UDPThroughput , PacketLoss , UDPNormalizedThroughput vs Bandwidth are shown in
+        their corresponding folders with filenames throughput.txt , Packlostswitches.txt , Normthtoughput.txt 
+
+      
+PART2:
+ 
+       The data report and plots for UDPThroughput , PacketLoss , UDPNormalizedThroughput vs Bandwidth are shown in
+       their corresponding folders (folders from 1 to 9 corresponding to each bandwidth for link b/w switches) with filenames
+       plots are saved in graphs folder.       
+       All data in the below files corresponding to bandwidth in the first column are in Kbps
+       >>> throughput.txt 
+       >>> Packlostswitches.txt 
+       >>> Normthtoughput.txt all data in kbps
+
+     In case of UDP most packet traces are found from client to server , in this case from h1 to h2 , and also there are few 
+     UDP data packets found from server to client i.e from h2 to h1 , But comparatiely this number is very very small compared
+     with total packet traces , hence in our script we have included all the packets and  also since we calculated fractional packet
+     loss the error margin doesn't really stand out.
+
+

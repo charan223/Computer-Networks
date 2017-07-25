@@ -1,0 +1,7 @@
+64 949 Kbits/sec
+128 953 Kbits/sec
+256 953 Kbits/sec
+512 956 Kbits/sec
+1024 955 Kbits/sec
+2048 960 Kbits/sec
+4096 949 Kbits/sec

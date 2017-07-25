@@ -1,0 +1,78 @@
+Report:
+                ***********************************
+                * R.Sri charan Reddy    14CS10037 *
+                * G.Sai Bharath Chandra 14CS10020 *
+                ***********************************
+
+
+
+
+Instructions:
+install ftpd on mininet
+
+sudo mn --custom topo.py --topo mytopo --link tc
+xterm h1,h2,h3
+
+In h1 terminal:
+inetd
+wireshark&
+
+In h2 terminal:
+mkdir h2
+cd h2
+wireshark&
+ftp 10.0.0.1
+get oversize_pdf_test_0.pdf        //filename  
+
+In h3 terminal:
+mkdir h3
+cd h3
+wireshark&
+ftp 10.0.0.1
+get oversize_pdf_test_0.pdf        //filename
+
+
+Questions:
+
+1)
+a)Application Layer => FTP
+b)Transport Layer => Transfer Control Protocol (TCP)
+c)Network Layer => IPv4
+d)Data link layer => Ethernet Industrial Protocol
+
+
+
+2)
+a)
+FTP :		 No header
+TCP : 		 Header Size =32 bytes
+IPv4: 	 	 Header Size =20 bytes
+Ethernet/IP:     Header Size =14 bytes
+
+b)
+FTP :		No header
+TCP :   	Source port,Destination port,sequence number,Acknowledgement number,Header Length,flags,window Size Value,Checksum,Options
+IPv4:    	Header Size =Source,Destination,Version,Header length,Differentiated Services Field,Total 		Length,Identification,Flags,Fragment offset,Time to live,Protocol,Header checksum
+Ethernet/IP:	Destination,Source,Type 
+
+c)	There are four flows
+	<10.0.0.2,10.0.0.1,49975,ftp-data> at h2-eth0,h1-eth0
+	<10.0.0.1,10.0.0.2,ftp-data,49975> at h2-eth0,h1-eth0
+	<10.0.0.3,10.0.0.1,56212,ftp-data> at h3-eth0,h1-eth0
+	<10.0.0.1,10.0.0.3,ftp-data,56212> at h3-eth0,h1-eth0
+
+
+
+3)	Transport layer flow is bidirectional.Packets are sent from h1->h2 and h2->h1,h1->h3,h3->h1
+
+4)	For the packets generated at h3,the cource MAC address is b6:44:76:8a:f8:le and the destination MAC address is 06:75:f2:d4:64:4f .The destination MAC address is same as h1 MAC Address.
+
+
+5)	For the packets generated at h3,the source IP Address is 10.0.03 and the destination IP 10.0.01.The destination IP Address is same as h1 IP Address
+
+
+
+6) 	MAC Address is used to identity a host in the same network.
+	IP Address is used to indentiy the network.
+	Address Resolution Protocol translates the IP Address into MAC Address
+
